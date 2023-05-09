@@ -10,6 +10,11 @@ describe('SimpleFromDemo', () => {
             a: "!",
             b: "X",
             result: NaN
+        },
+        {
+            a: 1,
+            b: "X",
+            result: NaN
         }
     ];
 
@@ -31,7 +36,7 @@ describe('SimpleFromDemo', () => {
                 if (typeof data.result === "number") {
                     cy.wrap($result).invoke("text").should("include", data.result);
                 } else {
-                    cy.wrap($result).invoke("text").should("include", NaN);
+                    cy.wrap($result).invoke("text").should("include", data.result);
                 }
             });
 
