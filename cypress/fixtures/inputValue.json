@@ -1,0 +1,17 @@
+{
+  "CorrectValue": {
+    "a": 12,
+    "b": 3,
+    "result": 15
+  },
+  "IncorrectValue": {
+    "a": "",
+    "b": 3,
+    "result": "NaN"
+  },
+  "IncorrectValue2": {
+    "a": "a",
+    "b": "c",
+    "result": "NaN"
+  }
+}
