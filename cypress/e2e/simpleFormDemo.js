@@ -25,7 +25,7 @@ describe('SimpleFromDemo', () => {
     });
 
     value.forEach((data) => {
-        it(`Send two values (${data.a}, ${data.b}) and check the results`, () => {
+        it(`Set two values (${data.a}, ${data.b}) and check the results`, () => {
             cy.visit("/basic-first-form-demo.html");
             cy.get("#user-message").type("Some Message");
             cy.get("button").contains("Show Message").click();
@@ -33,11 +33,7 @@ describe('SimpleFromDemo', () => {
             cy.get("#value2").type(data.b);
             cy.get("#gettotal button").click();
             cy.get('#displayvalue').then(($result) => {
-                if (typeof data.result === "number") {
-                    cy.wrap($result).invoke("text").should("include", data.result);
-                } else {
-                    cy.wrap($result).invoke("text").should("include", data.result);
-                }
+                cy.wrap($result).invoke("text").should("include", data.result);
             });
 
         });
