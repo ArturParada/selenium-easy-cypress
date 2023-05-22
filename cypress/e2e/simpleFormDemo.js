@@ -1,5 +1,5 @@
+import SimpleFormDemoPO from "../support/PageObjects/simpleFormDemoPO";
 describe('SimpleFromDemo', () => {
-
     const value = [
         {
             a: 12,
@@ -18,23 +18,23 @@ describe('SimpleFromDemo', () => {
         }
     ];
 
+    beforeEach(() => {
+        SimpleFormDemoPO.goSimpleFormDemoPage()
+    })
+
     it('Fill one input', () => {
-        cy.visit("/basic-first-form-demo.html");
-        cy.get("#user-message").type("Some Message");
-        cy.get("button").contains("Show Message").click();
+        SimpleFormDemoPO.typeMessage("Show Message")
+        SimpleFormDemoPO.clickShowMessageBtnElement()
+        SimpleFormDemoPO.typedMessageshouldBeEqualToSendingMessage("Show Message")
     });
 
     value.forEach((data) => {
-        it(`Set two values (${data.a}, ${data.b}) and check the results`, () => {
-            cy.visit("/basic-first-form-demo.html");
-            cy.get("#user-message").type("Some Message");
-            cy.get("button").contains("Show Message").click();
-            cy.get("#value1").type(data.a);
-            cy.get("#value2").type(data.b);
-            cy.get("#gettotal button").click();
-            cy.get('#displayvalue').then(($result) => {
-                cy.wrap($result).invoke("text").should("include", data.result);
-            });
+        it(`Set two values (${data.a}, ${data.b}) and check the result: ${data.result}`, () => {
+            SimpleFormDemoPO.typeMessage("Show Message")
+            SimpleFormDemoPO.clickShowMessageBtnElement()
+            SimpleFormDemoPO.typeValues(data.a, data.b)
+            SimpleFormDemoPO.clickOnTotalBtn()
+            SimpleFormDemoPO.sumAssercion(data.result)
 
         });
     });
