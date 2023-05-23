@@ -24,14 +24,14 @@ describe('SimpleFromDemo', () => {
 
     it('Fill one input', () => {
         SimpleFormDemoPO.typeMessage("Show Message")
-        SimpleFormDemoPO.clickShowMessageBtnElement()
+        SimpleFormDemoPO.clickShowMessageBtn()
         SimpleFormDemoPO.typedMessageshouldBeEqualToSendingMessage("Show Message")
     });
 
     value.forEach((data) => {
         it(`Set two values (${data.a}, ${data.b}) and check the result: ${data.result}`, () => {
             SimpleFormDemoPO.typeMessage("Show Message")
-            SimpleFormDemoPO.clickShowMessageBtnElement()
+            SimpleFormDemoPO.clickShowMessageBtn()
             SimpleFormDemoPO.typeValues(data.a, data.b)
             SimpleFormDemoPO.clickOnTotalBtn()
             SimpleFormDemoPO.sumAssercion(data.result)
