@@ -27,7 +27,7 @@ class SimpleFormDemoPO {
     typeMessage(message) {
         this.userMessageInputElement.type(message)
     }
-    clickShowMessageBtnElement() {
+    clickShowMessageBtn() {
         this.showMessageBtnElement.click()
     }
     typedMessageshouldBeEqualToSendingMessage(message) {
