@@ -9,10 +9,10 @@ class SimpleFormDemoPO {
         return cy.get("#display")
     }
     get valueFromInputAElement() {
-        return cy.get("#value1")
+        return cy.get("input#value1")
     }
     get valueFromInputBElement() {
-        return cy.get("#value2")
+        return cy.get("input#value2")
     }
     get totalBtnElement() {
         return cy.get("#gettotal button")
