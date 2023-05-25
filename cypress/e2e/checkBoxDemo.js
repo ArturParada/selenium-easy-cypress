@@ -6,7 +6,7 @@ describe('Checkbox demo', () => {
     })
 
     it('checkbox checked', () => {
-        CheckBoxDemoPO.checkSingleInput()
+        CheckBoxDemoPO.checkSingleInputAndVeryfi()
         CheckBoxDemoPO.receivedMessageShouldBeEqualExpected("Success - Check box is checked")
     })
 

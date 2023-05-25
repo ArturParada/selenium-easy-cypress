@@ -10,8 +10,8 @@ class CheckBoxDemoPO {
         this.receivedMessageElement.invoke('text').should('contain', checkboxMessage)
     }
 
-    checkSingleInput() {
-        this.checkboxInputElement.check()
+    checkSingleInputAndVeryfi() {
+        this.checkboxInputElement.check().invoke("prop", "checked").should('be.true')
     }
 
     goCheckboxDemoPage() {
