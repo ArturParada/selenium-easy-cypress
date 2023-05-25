@@ -1,11 +1,13 @@
+import CheckBoxDemoPO from "../support/PageObjects/CheckBoxDemoPO";
+
 describe('Checkbox demo', () => {
     beforeEach(() => {
-        cy.visit("/basic-checkbox-demo.html")
+        CheckBoxDemoPO.goCheckboxDemoPage()
     })
 
     it('checkbox checked', () => {
-        cy.get("input#isAgeSelected").check()
-        cy.get('#txtAge').invoke('text').should('contain', "Success - Check box is checked")
+        CheckBoxDemoPO.checkSingleInput()
+        CheckBoxDemoPO.receivedMessageShouldBeEqualExpected("Success - Check box is checked")
     })
 
 
