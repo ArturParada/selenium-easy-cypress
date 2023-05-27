@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "oneTest": "npx cypress run --spec ", 
-    "allTest": "npx cypress run", 
+    "allTests": "npx cypress run", 
     "openCypress": "npx cypress open "
 
   },
