@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tests": "npx cypress run ",
+    "oneTest": "npx cypress run --spec ", 
+    "allTest": "npx cypress run", 
     "openCypress": "npx cypress open "
 
   },
