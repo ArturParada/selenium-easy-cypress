@@ -12,7 +12,7 @@ class RadioButtonPo {
         this.getChceckedValueBtnElement.click()
     }
     assertValueChecked(gender) {
-        this.checkedValueElement.should('contain', gender)
+        this.checkedValueElement.should('have.text', gender)
 
     }
 
