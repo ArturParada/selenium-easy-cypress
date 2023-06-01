@@ -31,7 +31,7 @@ class SimpleFormDemoPO {
         this.showMessageBtnElement.click()
     }
     typedMessageshouldBeEqualToSendingMessage(message) {
-        this.recaivedMessageElement.should("contain", message)
+        this.recaivedMessageElement.should("have.text", message)
     }
     typeValues(valueA, valueB) {
         this.valueFromInputAElement.type(valueA)

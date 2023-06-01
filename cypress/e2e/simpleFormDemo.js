@@ -29,12 +29,13 @@ describe('SimpleFromDemo', () => {
     });
 
     value.forEach((data) => {
-        it(`Set two values (${data.a}, ${data.b}) and check the result: ${data.result}`, () => {
+        const { a, b, result } = data
+        it(`Set two values (${a}, ${b}) and check the result: ${data}`, () => {
             SimpleFormDemoPO.typeMessage("Show Message")
             SimpleFormDemoPO.clickShowMessageBtn()
-            SimpleFormDemoPO.typeValues(data.a, data.b)
+            SimpleFormDemoPO.typeValues(a, b)
             SimpleFormDemoPO.clickOnTotalBtn()
-            SimpleFormDemoPO.sumAssercion(data.result)
+            SimpleFormDemoPO.sumAssercion(result)
 
         });
     });
