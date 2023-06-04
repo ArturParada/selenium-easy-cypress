@@ -18,18 +18,20 @@ describe('Radibutton tests', () => {
     });
     const dataFotGroup =
         [
-            ['Male', "0 to 5"],
-            ['Male', "5 to 15"],
-            ['Male', "15 to 50"],
-            ['Female', "0 to 5"],
-            ['Female', "5 to 15"],
-            ['Female', "15 to 50"],
+            ['Male', "0 to 5", "Sex : Male Age group: 0 - 5"],
+            ['Male', "5 to 15", "Sex : Male Age group: 5 - 15"],
+            ['Male', "15 to 50", "Sex : Male Age group: 15 - 50"],
+            ['Female', "0 to 5", "Sex : Female Age group: 0 - 5"],
+            ['Female', "5 to 15", "Sex : Female Age group: 5 - 15"],
+            ['Female', "15 to 50", "Sex : Female Age group: 15 - 50"],
         ]
     dataFotGroup.forEach($data => {
-        const [gender, ageGroup] = $data
-        it(`Selec a ${gender} , age group ${ageGroup} and print message`, () => {
+        const [gender, ageGroup, message] = $data
+        it.only(`Selec a ${gender} , age group ${ageGroup} and print message ${message}`, () => {
             RadioButtonPO.selectGroupGender(gender)
             RadioButtonPO.selectAgeGroup(ageGroup)
+            RadioButtonPO.clickGetValueBtn()
+            RadioButtonPO.assertGroupMessage(message)
 
         });
     })

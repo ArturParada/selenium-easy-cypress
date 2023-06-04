@@ -3,12 +3,16 @@ class RadioButtonPo {
         return cy.get("[name='optradio']")
     }
 
-    get chceckedValueBtnElement() {
+    get getChceckedValueBtnElement() {
         return cy.get("button#buttoncheck")
     }
 
     get checkedValueElement() {
         return cy.get("p.radiobutton")
+    }
+
+    get checkedValueGroupElemet() {
+        return cy.get("p.groupradiobutton")
     }
 
     get radioGendersSelectorGroupElement() {
@@ -19,14 +23,23 @@ class RadioButtonPo {
         return cy.get("[name='ageGroup']")
     }
 
-    // get getValuesBtnElement
-
-    clickCheckedValueBtn() {
-        this.chceckedValueBtnElement.click()
+    get getValuesBtnElement() {
+        return cy.get("button[onclick='getValues();']")
     }
 
-    assertValueChecked(gender) {
-        this.checkedValueElement.should('have.text', gender)
+    clickCheckedValueBtn() {
+        this.getChceckedValueBtnElement.click()
+    }
+    clickGetValueBtn() {
+        this.getValuesBtnElement.click()
+    }
+
+    assertValueChecked(message) {
+        this.checkedValueElement.should('have.text', message)
+
+    }
+    assertGroupMessage(message) {
+        this.checkedValueGroupElemet.should('have.text', message)
 
     }
 
@@ -48,7 +61,7 @@ class RadioButtonPo {
         } else if (ageGroup === "5 to 15") {
             this.ageGroupElement.eq(1).click()
         } else if (ageGroup === "15 to 50") {
-            this.ageGroupElement.eq(1).click()
+            this.ageGroupElement.eq(2).click()
         }
     }
 
