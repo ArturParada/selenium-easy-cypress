@@ -4,6 +4,7 @@ describe('Radibutton tests', () => {
     beforeEach(() => {
         RadioButtonPO.goRadiobuttonDemoPage()
     })
+    
     const data = [
         ['Male', "Radio button 'Male' is checked"], ['Female', "Radio button 'Female' is checked"]
     ]
@@ -13,9 +14,9 @@ describe('Radibutton tests', () => {
             RadioButtonPO.selectSingleGender(gender)
             RadioButtonPO.clickCheckedValueBtn()
             RadioButtonPO.assertValueChecked(message)
-
         });
     });
+    
     const dataFotGroup =
         [
             ['Male', "0 to 5", "Sex : Male Age group: 0 - 5"],
@@ -32,7 +33,6 @@ describe('Radibutton tests', () => {
             RadioButtonPO.selectAgeGroup(ageGroup)
             RadioButtonPO.clickGetValueBtn()
             RadioButtonPO.assertGroupMessage(message)
-
         });
     })
 
