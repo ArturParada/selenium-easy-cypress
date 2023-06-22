@@ -3,9 +3,12 @@ describe('Drop down test', () => {
     beforeEach(() => {
         dropDownPO.goBasicSelectDropdownDemoPage()
     })
-    it('Day selec', () => {
-        const day = "Monday"
-        dropDownPO.selectDayFromDropdown(day)
-        dropDownPO.recaivedSingleMessage(day)
+    it('Day select', () => {
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',]
+        days.forEach((day) => {
+            dropDownPO.selectDayFromDropdown(day)
+            dropDownPO.recaivedSingleMessage(day)
+        })
+
     });
 });
