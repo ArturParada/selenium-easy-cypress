@@ -11,4 +11,15 @@ describe('Drop down test', () => {
         })
 
     });
+    it('Changing day', () => {
+
+        const towns = ["New York", "Ohio", "California", "Florida"]
+        towns.forEach(town => {
+            dropDownPO.selectCountry(town)
+            dropDownPO.clickFirstSelectedBtnElement()
+            dropDownPO.recivedMultipleMessage(town)
+        })
+
+
+    });
 });
