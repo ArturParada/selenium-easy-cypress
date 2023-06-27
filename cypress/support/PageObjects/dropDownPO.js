@@ -38,7 +38,6 @@ class DropDownPO {
     }
 
     selectCountry(value) {
-        // this.multipleListElement.select(value)
         this.multipleListElement.each($el => {
             const town = $el.text()
             const townName = value
@@ -47,7 +46,17 @@ class DropDownPO {
 
             }
         })
+    }
 
+    selectMultipleCountry(values) {
+        this.multipleListElement.each($el => {
+            const town = $el.text();
+            if (values.includes(town)) {
+                cy.wrap($el)
+                    .click({ ctrlKey: true })
+
+            }
+        });
     }
 
     recivedMultipleMessage(value) {
@@ -58,4 +67,5 @@ class DropDownPO {
         cy.visit("/basic-select-dropdown-demo.html")
     }
 }
+
 export default new DropDownPO()
