@@ -1,13 +1,14 @@
 import dropDownPO from "../support/PageObjects/dropDownPO";
 describe('Drop down test', () => {
 
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',]
+
     const towns = ["New York", "Ohio", "California", "Florida"]
 
     beforeEach(() => {
         dropDownPO.goBasicSelectDropdownDemoPage()
     })
     it('Day select', () => {
-        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',]
         days.forEach((day) => {
             dropDownPO.selectDayFromDropdown(day)
             dropDownPO.recaivedSingleMessage(day)
