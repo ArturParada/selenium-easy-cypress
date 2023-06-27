@@ -1,5 +1,8 @@
 import dropDownPO from "../support/PageObjects/dropDownPO";
 describe('Drop down test', () => {
+
+    const towns = ["New York", "Ohio", "California", "Florida"]
+
     beforeEach(() => {
         dropDownPO.goBasicSelectDropdownDemoPage()
     })
@@ -12,7 +15,6 @@ describe('Drop down test', () => {
 
     });
     it('Changing single town', () => {
-        const towns = ["New York", "Ohio", "California", "Florida"]
         towns.forEach(town => {
             dropDownPO.selectCountry(town)
             dropDownPO.clickFirstSelectedBtnElement()
@@ -20,8 +22,6 @@ describe('Drop down test', () => {
         })
     });
     it('Select multiple towns', () => {
-        const towns = ["New York", "Ohio", "California", "Florida"]
-
         dropDownPO.selectMultipleCountry(towns)
         dropDownPO.clickGetAllSelectedBtn()
 
