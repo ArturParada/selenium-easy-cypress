@@ -19,12 +19,14 @@ describe('Drop down test', () => {
         towns.forEach(town => {
             dropDownPO.selectCountry(town)
             dropDownPO.clickFirstSelectedBtnElement()
-            dropDownPO.recivedMultipleMessage(town)
+            dropDownPO.firstSelectedOptionMessage(town)
         })
     });
-    it('Select multiple towns', () => {
-        dropDownPO.selectMultipleCountry(towns)
-        dropDownPO.clickGetAllSelectedBtn()
-
+    it.only('Select multiple towns', () => {
+        towns.forEach(town => {
+            dropDownPO.selectMultipleCountry(town)
+            dropDownPO.clickGetAllSelectedBtn()
+            dropDownPO.recivedMultipleMessage(town)
+        })
     });
 });

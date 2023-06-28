@@ -57,10 +57,14 @@ class DropDownPO {
 
             }
         });
+
+    }
+    firstSelectedOptionMessage(value) {
+        this.mulitipleMessageElement.should("have.text", `First selected option is : ${value}`)
     }
 
     recivedMultipleMessage(value) {
-        this.mulitipleMessageElement.should("have.text", `First selected option is : ${value}`)
+        this.mulitipleMessageElement.should("contain", `${value}`)
     }
 
     goBasicSelectDropdownDemoPage() {
