@@ -25,6 +25,7 @@ class DropDownPO {
     clickGetAllSelectedBtn() {
         this.getAllSelectedBtnElement.click()
     }
+
     clickFirstSelectedBtnElement() {
         this.firstSelectedBtnElement.click()
     }
@@ -54,17 +55,16 @@ class DropDownPO {
             if (values.includes(town)) {
                 cy.wrap($el)
                     .click({ ctrlKey: true })
-
             }
         });
-
     }
+
     firstSelectedOptionMessage(value) {
         this.mulitipleMessageElement.should("have.text", `First selected option is : ${value}`)
     }
 
     recivedMultipleMessage(value) {
-        this.mulitipleMessageElement.should("contain", `${value}`)
+        this.mulitipleMessageElement.should("have.text", `Options selected are : ${value}`)
     }
 
     goBasicSelectDropdownDemoPage() {
