@@ -4,14 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "oneTest": "npx cypress run --spec ", 
-    "allTests": "npx cypress run", 
+    "oneTest": "npx cypress run --spec ",
+    "allTests": "npx cypress run",
     "openCypress": "npx cypress open "
-
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cypress": "^12.11.0"
+  },
+  "devDependencies": {
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions":"cypress/support/step_definitions"
   }
 }
