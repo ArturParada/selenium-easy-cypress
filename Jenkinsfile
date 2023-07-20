@@ -1,12 +1,12 @@
 pipeline {
     agent any
 
-    tools {nodejs "node"} 
+    tools {nodejs "node"}
 
-    stages{
-        stage('Cypress Parallel Test Suite'){
+    stages {
+        stage('Cypress Parallel Test Suite') {
             parallel {
-                stage('Slave Node1'){
+                stage('Slave Node1') {
                     agent {
                         label "node1"
                     }
