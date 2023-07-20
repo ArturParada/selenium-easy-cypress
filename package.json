@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "oneTest": "npx cypress run --spec ",
-    "allTests": "npx cypress run",
+    "Tests": "npx cypress run --parallel",
+    "allTests": "npx cypress run --record --key 92183039-858e-4f9a-a80e-31829abe5c9b --parallel",
     "openCypress": "npx cypress open "
   },
   "author": "",
