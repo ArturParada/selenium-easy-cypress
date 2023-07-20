@@ -11,7 +11,7 @@ pipeline {
                         label "node1"
                     }
                     steps {
-                        git url: 'https://github.com/ArturParada/selenium-easy-cypress.git'
+                        git branch:'main', url: 'https://github.com/ArturParada/selenium-easy-cypress.git'
                         bat 'npm install'
                         bat 'npm update'
                         bat 'npm run allTests'
