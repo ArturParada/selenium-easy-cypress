@@ -6,7 +6,7 @@
   "scripts": {
     "oneTest": "npx cypress run --spec ",
     "Tests": "npx cypress run --parallel",
-    "allTests": "npx cypress run --record --key 92183039-858e-4f9a-a80e-31829abe5c9b --parallel",
+    "allTests": "npx cypress run --key --record 92183039-858e-4f9a-a80e-31829abe5c9b --parallel",
     "openCypress": "npx cypress open "
   },
   "author": "",
