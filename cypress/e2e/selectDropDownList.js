@@ -2,22 +2,30 @@ import dropDownPO from "../support/PageObjects/dropDownPO";
 
 describe('Drop down test', () => {
 
-    // const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    const towns = ["Florida", "New York", "Ohio", "California"]
 
-    // const towns = ["Florida", "New York", "Ohio", "California"]
-
-    beforeEach(() => {
+    beforeEach(function () {
         dropDownPO.goBasicSelectDropdownDemoPage()
-        //do sprawdzenia
-        cy.fixture(days.json).as('days')
-        cy.fixture(towns.json).as('towns')
+        cy.fixture('days.json').as('days')
     })
 
+    //implementacja z plikime days.json
+
+    //.this dzial tylko ze zwykłą funkjac w strzałkowej trzeba urzyc aliasu chodzi o scope, dodatkowo forEach bo zwykly each dzial tylko w chainie 
+    // it.only('Day select', function () {
+    //     this.days.forEach((day) => {
+    //         dropDownPO.selectDayFromDropdown(day)
+    //         dropDownPO.recaivedSingleMessage(day)
+    //     })
+
+    // });
+
     it('Day select', () => {
-        this.days.forEach((day) => {
+        cy.get('@days').each((day) => {
             dropDownPO.selectDayFromDropdown(day)
             dropDownPO.recaivedSingleMessage(day)
         })
+
     });
 
     it('Changing single town', () => {
