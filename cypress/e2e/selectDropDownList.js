@@ -20,12 +20,26 @@ describe('Drop down test', () => {
 
     // });
 
-    it('Day select', () => {
-        cy.get('@days').each((day) => {
-            dropDownPO.selectDayFromDropdown(day)
-            dropDownPO.recaivedSingleMessage(day)
-        })
+    // it.only('Day select', () => {
+    //     cy.get('@days').forEach((day) => {
+    //         dropDownPO.selectDayFromDropdown(day)
+    //         dropDownPO.recaivedSingleMessage(day)
+    //     })
 
+    // });
+    it.only('Day select', () => {
+        // Odczytaj plik days.json
+        cy.fixture('days.json').then((data) => {
+            // Przechwyć dane jako days
+            const { days } = data;
+
+            // Iteruj przez każde miasto
+            days.forEach((day) => {
+                // Wykonaj operacje na stronie z użyciem miasta day
+                dropDownPO.selectDayFromDropdown(day);
+                dropDownPO.recaivedSingleMessage(day);
+            });
+        });
     });
 
     it('Changing single town', () => {
