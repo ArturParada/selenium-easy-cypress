@@ -15,7 +15,7 @@ describe('Alerts tests suit', () => {
         AlertsDemoPO.clickonInitialConfirmBoxBtN()
         AlertsDemoPO.validationCorrectConfirmBoxMessage("Press a button!", true, "You pressed OK!")
     });
-
+    dasdas
     it('Correct message after click "cancel" button on alert', () => {
         AlertsDemoPO.clickonInitialConfirmBoxBtN()
         AlertsDemoPO.validationCorrectConfirmBoxMessage("Press a button!", false, 'You pressed Cancel!')
