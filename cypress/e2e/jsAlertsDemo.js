@@ -19,5 +19,5 @@ describe('Alerts tests suit', () => {
     it('Correct message after click "cancel" button on alert', () => {
         AlertsDemoPO.clickonInitialConfirmBoxBtN()
         AlertsDemoPO.validationCorrectConfirmBoxMessage("Press a button!", false, 'You pressed Cancel!')
-    });
+        
 });
